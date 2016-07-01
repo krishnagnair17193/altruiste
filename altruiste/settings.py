@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'altruiste.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'altruist',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'd7jlrvb6v8han8',
+        'USER': 'qnxfnbqomdhdyd',
+        'PASSWORD': 'yhh7_oWHymKWUVxxmhka3XgSOy',
+        'HOST': 'ec2-50-17-214-132.compute-1.amazonaws.com',
+        'PORT': '5432',
     },
 }
 
