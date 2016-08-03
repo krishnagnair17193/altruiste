@@ -20,3 +20,29 @@ class ContactAddress(SingletonModel):
     def __str__(self):
         return '%s, %s' % (self.address_line_1, self.address_line_2)
 
+
+class Team(models.Model):
+    name = models.CharField(max_length=120)
+    role = models.CharField(max_length=150)
+    bio = models.TextField()
+    photo = models.ImageField(upload_to='team/images', help_text='Size 140x140')
+    facebook_link = models.URLField(null=True, blank=True)
+    google_link = models.URLField(null=True, blank=True)
+    twitter_link = models.URLField(null=True, blank=True)
+    linkedin_link = models.URLField(null=True, blank=True)
+    instagram_link = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Team'
+
+
+class GalleryImage(models.Model):
+    title = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='gallery/images')
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title

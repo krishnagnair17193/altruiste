@@ -25,7 +25,7 @@ from contacts import urls as contact_urls
 urlpatterns = [
     url(r'^altruist-admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^contact-us/$', include(contact_urls)),
+    url(r'^contact-us/', include(contact_urls)),
 
 ]
 
