@@ -19,10 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
+from general.views import HomeView
+from contacts import urls as contact_urls
 
 urlpatterns = [
-    url(r'', TemplateView.as_view(template_name='index.html'), name='home'),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^altruist-admin/', include(admin.site.urls)),
+    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^contact-us/$', include(contact_urls)),
+
 ]
 
 urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -546,27 +546,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="map-home">
 				<div class="col-md-6 login-pad">
 					<h2>Drop Us A Message</h2>
-					<form>
-								<input type="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" required="">
-								<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-								<label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i>Subscribe in our Newsletter</label>
-								<textarea placeholder="Message" required=""></textarea>
+					<form method="post" action="{% url 'contact_us' %}">{% csrf_token %}
+								{{ contact_form.name }}
+								{{ contact_form.email }}
+								<label class="checkbox">{{ contact_form.subscribed_newsletter }}<i> </i>Subscribe in our Newsletter</label>
+								{{ contact_form.message }}
+								{{ contact_form.errors }}
 								<input type="submit" value="SEND">
 					</form>
 				</div>
 				<div class="col-md-6 drop-pad sign-gd-two">
 					<h2>Contact Info</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-				doloremque laudantium, totam rem aperiam, eaque ipsa quae ab.Perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-								doloremque laudantium, totam rem.</p>
+					<p>{{ contact_address.contact_description }}</p>
 					<ul>
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k Avenue, 4th block, <span>Newyork City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : {{ contact_address.address_line_1 }}, {{ contact_address.address_line_2 }}, <span>{{ contact_address.city }}</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:{{ contact_address.email }}">{{ contact_address.email }}</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : {{ contact_address.phone }}</li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819&center=-33.8569,151.2152"></iframe>
 			</div>
 		</div>
 	</div>

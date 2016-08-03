@@ -760,6 +760,16 @@ border:1px solid #ddd;
   color: #999;
     border-radius: 4px;
 }
+.login-pad form input[type="email"] {
+border:1px solid #ddd;
+  margin: 0 0 24px 0;
+  width: 100%;
+  padding:10px 10px;
+  font-size: 14px;
+  outline: none;
+  color: #999;
+    border-radius: 4px;
+}
 .login-pad textarea {
   margin: 16px 0;
   resize: none;
