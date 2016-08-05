@@ -1396,7 +1396,7 @@ figure.effect-jazz:hover h4 {
 .header-nav {
     background: rgba(165, 165, 165, 0.57);
     padding: 38px 0;
-    width: 63%;
+    width: 100%;
 }
 .navbar-nav {
     float: left;

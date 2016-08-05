@@ -21,11 +21,13 @@ from django.views.generic import TemplateView
 
 from general.views import HomeView
 from contacts import urls as contact_urls
+from profiles import urls as profile_urls
 
 urlpatterns = [
     url(r'^altruist-admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^contact-us/', include(contact_urls)),
+    url(r'^profile/', include(profile_urls)),
 
 ]
 

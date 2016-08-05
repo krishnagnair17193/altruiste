@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Altruist&eacute; | {% block page_title%} Home {% endblock %}</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Charity Life Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href='{% static "css/bootstrap.css" %}' rel="stylesheet" type="text/css" media="all" />
+<link href='{% static "css/ihover.css" %}' rel="stylesheet" type="text/css" media="all" />
+<link href='{% static "css/iconeffects.css" %}' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href='{% static "css/swipebox.css" %}'>
+<link href='{% static "css/style.css" %}' rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src='{% static "js/jquery-2.1.4.min.js" %}'></script>
+<!-- //js -->
+<!-- fonts -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
+<!-- //fonts -->
+<script type="text/javascript" src='{% static "js/numscroller-1.0.js" %}'></script>
+{% block extra_js %}
+	<script type="text/javascript" src='{% static "js/home.js" %}'></script>
+{% endblock %}
+<!-- swipe box js -->
+	<script src="js/jquery.swipebox.min.js"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+	</script>
+<!-- //swipe box js -->
+	<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src='{% static "js/move-top.js" %}'></script>
+		<script type="text/javascript" src='{% static "js/easing.js" %}'></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	<!-- start-smoth-scrolling -->
+
+</head>
+<body>
+<!-- banner -->
+<!--<div class="banner">-->
+<div>
+	<div class="container">
+		<div class="header-nav">
+			<nav class="navbar navbar-default">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<h1><a class="navbar-brand" href="index.html"><img src='{% static "images/logo2.png"%}' alt="" /></a></h1>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav nav1 cl-effect-11" id="cl-effect-11">
+									<li><a data-hover="HOME" class="scroll active" href="index.html">HOME</a></li>
+									<li>/</li>
+									<li><a data-hover="ABOUT" class="scroll" href="#about">ABOUT</a></li>
+									<li>/</li>
+									<li><a  data-hover="GALLERY" class="scroll"  href="#gallery">GALLERY</a></li>
+									<li>/</li>
+									<li><a  data-hover="TEAM" class="scroll" href="#team">TEAM</a></li>
+									<li>/</li>
+									<li><a data-hover="SERVICES" class="scroll" href="#services">SERVICES</a></li>
+									<li>/</li>
+									<li><a data-hover="CONTACT" class="scroll" href="#contact">CONTACT</a></li>
+									<li>/</li>
+									<li><a data-hover="CONTACT" class="scroll" href="#contact">LOGIN</a></li>
+									<li>/</li>
+									<li><a data-hover="CONTACT" class="scroll" href="#contact">SIGNUP</a></li>
+								</ul>
+							
+							</div><!-- /navbar-collapse -->
+							<div class="clearfix"></div>
+			</nav>
+		</div>
+		{% block content %}
+
+		{% endblock %}
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="foo-left">
+			<p> &copy; 2016 Charity Life. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+		</div>
+		<div class="foo-right">
+			<ul>
+				<li><a class="fb" href="#"></a></li>
+				<li><a class="twitt" href="#"></a></li>
+				<li><a class="goog" href="#"></a></li>
+				<li><a class="drib" href="#"></a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //footer -->
+<!-- //banner-bottom -->
+<!-- for bootstrap working -->
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+<!-- //for bootstrap working -->
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+			};
+		*/								
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+
+</body>
+</html>
+
