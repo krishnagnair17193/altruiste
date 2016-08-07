@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^altruist-admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^contact-us/', include(contact_urls)),
-    url(r'^profile/', include(profile_urls)),
+    url(r'^', include(profile_urls)),
 
 ]
 

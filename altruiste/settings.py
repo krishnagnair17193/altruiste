@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'geoposition',
     'general',
     'contacts',
+    'profiles',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,7 +68,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.media',
-                'django.template.context_processors.request',
                 'django.template.context_processors.i18n',
             ],
         },
@@ -123,3 +123,11 @@ STATICFILES_DIRS = (
 
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyB0INjBVIsntifuaRSi2QoYdDcLB3htHMQ'
+
+AUTH_USER_MODEL = 'profiles.profile'
+LOGIN_REDIRECT_URL = '/'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass

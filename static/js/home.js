@@ -1,26 +1,39 @@
 $(function(){
+    $('input').on('input', function() {
+        $('#'+this.id).removeClass('input-error');
+        $('input[type="submit"]').prop('disabled', false);
+    }).trigger('input');
+    $('#id_message').on('input', function() {
+        $('#'+this.id).removeClass('input-error');
+        $('input[type="submit"]').prop('disabled', false);
+    }).trigger('#id_message');
+
+
+    $('#contact-success').hide();
 	$('#contact-form').on('submit', function(event){
     event.preventDefault();
-    var url = $("#contact-form").attr("action"));
-    console.log($(this).action)  // sanity check
-    console.log("create post is working!") // sanity check
+    $('input[type="submit"]').prop('disabled', true);
+    var url = $("#contact-form").attr("action");
+    var contactFormData = $("#contact-form").serialize();
     $.ajax({
         url : url, // the endpoint
         type : "POST", // http method
-        data : { the_post : $('#post-text').val() }, // data sent with the post request
+        data : contactFormData, // data sent with the post request
 
         // handle a successful response
         success : function(json) {
-            $('#post-text').val(''); // remove the value from the input
-            console.log(json); // log the returned json to the console
-            console.log("success"); // another sanity check
+            $('#contact-success').show();
+            $('#contact-form').hide();
         },
 
         // handle a non-successful response
         error : function(xhr,errmsg,err) {
-            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
-                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
-            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            $.each(xhr.responseJSON, function (key, value) {
+                var input = document.getElementsByName(key);
+                var input_id = '#id_' + key;
+                $(input_id).addClass("input-error");
+            });
+
         }
     });
 });

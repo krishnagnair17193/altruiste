@@ -467,14 +467,19 @@
 			<div class="map-home">
 				<div class="col-md-6 login-pad">
 					<h2>Drop Us A Message</h2>
-					<form id="contact-form" method="post" action="{% url 'contact_us' %}">{% csrf_token %}
+                    <div id="contact-success" class="alert alert-success">
+                        <strong>Message sent! </strong> We will get back to you soon.
+                        <img src="{% static 'images/tick-success.gif' %}" >
+                    </div>
+					<form id="contact-form" method="post" action="{% url 'contact_us' %}" novalidate>{% csrf_token %}
 								{{ contact_form.name }}
 								{{ contact_form.email }}
 								<label class="checkbox">{{ contact_form.subscribed_newsletter }}<i> </i>Subscribe in our Newsletter</label>
 								{{ contact_form.message }}
 								{{ contact_form.errors }}
-								<input type="submit" value="SEND">
+								<input type="submit" id="contact-submit" value="SEND">
 					</form>
+
 				</div>
 				<div class="col-md-6 drop-pad sign-gd-two">
 					<h2>Contact Info</h2>

@@ -2,14 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Altruiste |  Login </title>
-
-<!--Fav icons -->
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Altruiste | {% block page_title%} Home {% endblock %}</title>
+<title>Altruiste |  Register </title>
 
 <!--Fav icons -->
 
@@ -52,25 +45,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
 <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 <!-- //fonts -->
-
 </head>
 <body>
-    <div class="login-page">
+
+    <div class="register-page">
         <div class="logo-text">
         <img src="{% static "images/al-logo.png" %}" alt="">
 
     </div>
+
         <div class="form">
-            {% if form.non_field_errors %}
-                <div class="alert alert-danger">
-                  <strong>{{ form.non_field_errors.0 }}</strong>
-                </div>
-            {% endif %}
-            <form class="login-form" action="{% url 'login' %}" method="POST" novalidate>{% csrf_token %}
-                <input class="{% if form.username.errors %}input-error{% endif %}" type="email" name="username" placeholder="Email">
-                <input class="{% if form.password.errors %}input-error{% endif %}" type="password" name="password" placeholder="Password">
-                <button>login</button>
-                <p class="message">Not registered? <a href="{% url 'register' %}">Create an account</a></p>
+
+            <form class="register-form form-inline">
+                <input type="text" placeholder="First Name"/>
+                <input type="text" placeholder="Last Name"/>
+                <input type="email" placeholder="Email"/>
+                <input type="password" placeholder="Password"/>
+                <input type="password" placeholder="Confirm Password"/>
+                <button>Register</button>
+                <p class="message">Already registered? <a href="{% url 'login' %}">Sign In</a></p>
             </form>
         </div>
     </div>
@@ -78,6 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- for bootstrap working -->
 	<script src="{% static 'js/bootstrap.js' %}"></script>
 <!-- //for bootstrap working -->
+
+
 
 </body>
 </html>

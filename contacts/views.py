@@ -8,3 +8,5 @@ from general.mixins import AjaxableResponseMixin
 
 class ContactUsView(AjaxableResponseMixin, CreateView):
     form_class = ContactUsForm
+    template_name = 'home.html'
+    success_url = '/'
